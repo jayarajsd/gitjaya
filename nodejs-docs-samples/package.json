@@ -1,0 +1,81 @@
+{
+  "name": "nodejs-docs-samples",
+  "description": "Node.js samples found on https://cloud.google.com",
+  "version": "0.0.1",
+  "private": true,
+  "license": "Apache Version 2.0",
+  "author": "Google Inc.",
+  "contributors": [
+    {
+      "name": "Ace Nassri",
+      "email": "anassri@google.com"
+    },
+    {
+      "name": "Jerjou",
+      "email": "jerjou@google.com"
+    },
+    {
+      "name": "Jason Dobry",
+      "email": "jason.dobry@gmail.com"
+    },
+    {
+      "name": "Jon Wayne Parrott",
+      "email": "jonwayne@google.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git"
+  },
+  "semistandard": {
+    "globals": [
+      "after",
+      "afterEach",
+      "before",
+      "beforeEach",
+      "describe",
+      "it",
+      "assert",
+      "sinon",
+      "uuid"
+    ],
+    "ignore": [
+      "appengine/bower/public/bower_components",
+      "appengine/geddy",
+      "appengine/kraken",
+      "appengine/loopback",
+      "appengine/parse-server/cloud/main.js",
+      "appengine/sails",
+      "appengine/webpack/dist",
+      "**/node_modules/**",
+      "coverage"
+    ]
+  },
+  "scripts": {
+    "lint": "semistandard",
+    "pretest": "npm run lint && ./scripts/clean",
+    "t": "mocha -R spec -t 2000 --require intelli-espower-loader test/_setup.js",
+    "st": "mocha -R spec -t 120000 --require intelli-espower-loader system-test/_setup.js",
+    "mocha": "npm run t -- ./test/_setup.js ./test/*.test.js '{*,appengine/*,functions/*,functions/ocr/*}/test/*.test.js'",
+    "test": "npm run mocha",
+    "cover": "nyc --cache npm test && nyc report --reporter=html && nyc report --reporter=lcov",
+    "system-test": "mocha -R spec -t 120000 --require intelli-espower-loader ./system-test/_setup.js '{*,appengine/*}/system-test/*.test.js'",
+    "system-cover": "npm run pretest && nyc --cache npm run system-test && nyc report --reporter=html && nyc report --reporter=lcov",
+    "all-test": "mocha -R spec -t 120000 --require intelli-espower-loader ./system-test/_setup.js '{*,appengine/*}/system-test/*.test.js' ./test/*.test.js '{*,appengine/*,functions/*}/test/*.test.js'",
+    "all-cover": "npm run pretest && nyc --cache npm run all-test && nyc report --reporter=html && nyc report --reporter=lcov"
+  },
+  "devDependencies": {
+    "async": "2.1.4",
+    "intelli-espower-loader": "1.0.1",
+    "mocha": "3.1.2",
+    "nodejs-repo-tools": "git+https://github.com/GoogleCloudPlatform/nodejs-repo-tools.git#bbbb6035d77671eb053dbe6b6f0e3ff983f79639",
+    "nyc": "9.0.1",
+    "power-assert": "1.4.2",
+    "proxyquire": "1.7.10",
+    "request": "2.79.0",
+    "semistandard": "9.1.0",
+    "shelljs": "0.7.5",
+    "sinon": "1.17.6",
+    "supertest": "2.0.1"
+  }
+}

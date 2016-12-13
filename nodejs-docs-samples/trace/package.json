@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-docs-samples-trace",
+  "version": "0.0.1",
+  "private": true,
+  "license": "Apache Version 2.0",
+  "author": "Google Inc.",
+  "engines": {
+    "node": ">=4.3.2"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "cd ..; npm run t -- trace/test/*.test.js"
+  },
+  "dependencies": {
+    "@google/cloud-trace": "0.5.10",
+    "express": "4.14.0",
+    "request": "2.79.0"
+  }
+}

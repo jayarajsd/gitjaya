@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-docs-samples-functions-background",
+  "version": "0.0.1",
+  "private": true,
+  "license": "Apache Version 2.0",
+  "author": "Google Inc.",
+  "main": "./index.js",
+  "scripts": {
+    "test": "cd ..; npm run t -- functions/background/test/*.test.js"
+  },
+  "dependencies": {
+    "request": "^2.78.0",
+    "request-promise": "^4.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2"
+  }
+}

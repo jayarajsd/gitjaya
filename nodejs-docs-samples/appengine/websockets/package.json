@@ -1,0 +1,20 @@
+{
+  "name": "appengine-websockets",
+  "description": "Node.js websockets sample for Google App Engine",
+  "version": "0.0.1",
+  "private": true,
+  "license": "Apache Version 2.0",
+  "author": "Google Inc.",
+  "engines": {
+    "node": ">=4.3.2"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "4.14.0",
+    "express-ws": "1.0.0-rc.2",
+    "pug": "2.0.0-beta6",
+    "request": "2.79.0"
+  }
+}

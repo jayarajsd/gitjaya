@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-docs-samples-bigquery",
+  "version": "0.0.1",
+  "private": true,
+  "license": "Apache Version 2.0",
+  "author": "Google Inc.",
+  "scripts": {
+    "test": "cd ..; npm run t -- bigquery/test/*.test.js",
+    "system-test": "cd ..; npm run st -- bigquery/system-test/*.test.js"
+  },
+  "dependencies": {
+    "@google-cloud/bigquery": "0.6.0",
+    "@google-cloud/storage": "0.6.0",
+    "async": "2.1.4",
+    "yargs": "6.5.0"
+  },
+  "devDependencies": {
+    "uuid": "3.0.1"
+  },
+  "engines": {
+    "node": ">=4.3.2"
+  }
+}

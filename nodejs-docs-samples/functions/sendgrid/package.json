@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-docs-samples-functions-sendgrid",
+  "version": "0.0.1",
+  "private": true,
+  "license": "Apache Version 2.0",
+  "author": "Google Inc.",
+  "main": "./index.js",
+  "scripts": {
+    "test": "cd ..; npm run t -- functions/sendgrid/test/*.test.js"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "0.6.0",
+    "@google-cloud/bigquery": "0.6.0",
+    "uuid": "3.0.1",
+    "sendgrid": "4.7.1"
+  }
+}
